@@ -1,0 +1,300 @@
+export interface Program {
+  id: string;
+  name: string;
+  baseType: 'associate' | 'bachelor';
+  hasCertification: boolean;
+  certificationName?: string;
+  duration: string;
+  cost: string;
+  avgSalary: string;
+  jobGrowth: string;
+  difficulty: string;
+  topSkills: string[];
+  careerPaths: string[];
+  color: string;
+}
+
+export interface Major {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  certificationProvider?: string;
+  programs: Program[];
+}
+
+export const MAJORS: Major[] = [
+  {
+    id: 'computer-science',
+    name: 'Computer Science',
+    icon: '💻',
+    description: 'Software development, cloud computing, and technology careers',
+    certificationProvider: 'AWS',
+    programs: [
+      {
+        id: 'cs-associate-no-cert',
+        name: "Associate's in Computer Science",
+        baseType: 'associate',
+        hasCertification: false,
+        duration: '2 years',
+        cost: '$8,000 - $15,000',
+        avgSalary: '$45,000 - $65,000',
+        jobGrowth: '+15%',
+        difficulty: 'Moderate',
+        topSkills: ['Programming Basics', 'Web Development', 'Database Fundamentals', 'IT Support'],
+        careerPaths: ['Junior Developer', 'IT Support Specialist', 'Web Developer', 'Database Administrator'],
+        color: 'from-cyan-400 to-cyan-600',
+      },
+      {
+        id: 'cs-associate-with-cert',
+        name: "Associate's in Computer Science + AWS Certification",
+        baseType: 'associate',
+        hasCertification: true,
+        certificationName: 'AWS Cloud Practitioner',
+        duration: '2 years + 3 months',
+        cost: '$8,500 - $15,500',
+        avgSalary: '$55,000 - $75,000',
+        jobGrowth: '+20%',
+        difficulty: 'Moderate',
+        topSkills: ['Programming Basics', 'Web Development', 'AWS Services', 'Cloud Fundamentals', 'IT Support'],
+        careerPaths: ['Cloud-Ready Developer', 'AWS Support Specialist', 'Junior Cloud Engineer', 'DevOps Associate'],
+        color: 'from-cyan-500 to-teal-500',
+      },
+      {
+        id: 'cs-bachelor-no-cert',
+        name: "Bachelor's in Computer Science",
+        baseType: 'bachelor',
+        hasCertification: false,
+        duration: '4 years',
+        cost: '$40,000 - $80,000',
+        avgSalary: '$70,000 - $120,000',
+        jobGrowth: '+22%',
+        difficulty: 'Challenging',
+        topSkills: ['Advanced Algorithms', 'Software Engineering', 'Cloud Computing', 'AI/ML Basics'],
+        careerPaths: ['Software Engineer', 'Full Stack Developer', 'Data Scientist', 'Security Engineer'],
+        color: 'from-teal-400 to-teal-600',
+      },
+      {
+        id: 'cs-bachelor-with-cert',
+        name: "Bachelor's in Computer Science + AWS Certification",
+        baseType: 'bachelor',
+        hasCertification: true,
+        certificationName: 'AWS Solutions Architect',
+        duration: '4 years + 4 months',
+        cost: '$40,500 - $80,800',
+        avgSalary: '$90,000 - $140,000',
+        jobGrowth: '+28%',
+        difficulty: 'Challenging',
+        topSkills: ['Advanced Algorithms', 'Software Engineering', 'AWS Architecture', 'Cloud Solutions', 'High Availability'],
+        careerPaths: ['Cloud Solutions Architect', 'Senior Software Engineer', 'Cloud Architect', 'DevOps Lead'],
+        color: 'from-emerald-400 to-emerald-600',
+      },
+    ],
+  },
+  {
+    id: 'nursing',
+    name: 'Nursing',
+    icon: '🏥',
+    description: 'Healthcare, patient care, and medical careers',
+    programs: [
+      {
+        id: 'nursing-associate-no-cert',
+        name: "Associate's in Nursing (ADN)",
+        baseType: 'associate',
+        hasCertification: false,
+        duration: '2 years',
+        cost: '$10,000 - $20,000',
+        avgSalary: '$60,000 - $75,000',
+        jobGrowth: '+6%',
+        difficulty: 'Challenging',
+        topSkills: ['Patient Care', 'Clinical Skills', 'Medical Terminology', 'Basic Pharmacology'],
+        careerPaths: ['Registered Nurse (RN)', 'Clinical Nurse', 'Hospital Nurse', 'Community Health Nurse'],
+        color: 'from-rose-400 to-rose-600',
+      },
+      {
+        id: 'nursing-associate-with-cert',
+        name: "Associate's in Nursing + Specialty Certification",
+        baseType: 'associate',
+        hasCertification: true,
+        certificationName: 'Critical Care (CCRN)',
+        duration: '2 years + 6 months',
+        cost: '$10,500 - $20,500',
+        avgSalary: '$68,000 - $85,000',
+        jobGrowth: '+8%',
+        difficulty: 'Challenging',
+        topSkills: ['Patient Care', 'Critical Care', 'Emergency Response', 'Advanced Monitoring'],
+        careerPaths: ['ICU Nurse', 'Emergency Room Nurse', 'Critical Care Specialist', 'Trauma Nurse'],
+        color: 'from-rose-500 to-pink-500',
+      },
+      {
+        id: 'nursing-bachelor-no-cert',
+        name: "Bachelor's of Science in Nursing (BSN)",
+        baseType: 'bachelor',
+        hasCertification: false,
+        duration: '4 years',
+        cost: '$40,000 - $90,000',
+        avgSalary: '$70,000 - $90,000',
+        jobGrowth: '+9%',
+        difficulty: 'Very Challenging',
+        topSkills: ['Advanced Patient Care', 'Leadership', 'Research', 'Public Health'],
+        careerPaths: ['Clinical Nurse Leader', 'Nurse Manager', 'Public Health Nurse', 'Nurse Educator'],
+        color: 'from-pink-400 to-pink-600',
+      },
+      {
+        id: 'nursing-bachelor-with-cert',
+        name: "Bachelor's in Nursing + Specialty Certification",
+        baseType: 'bachelor',
+        hasCertification: true,
+        certificationName: 'Nurse Practitioner (FNP)',
+        duration: '4 years + 1 year',
+        cost: '$45,000 - $95,000',
+        avgSalary: '$95,000 - $120,000',
+        jobGrowth: '+45%',
+        difficulty: 'Very Challenging',
+        topSkills: ['Advanced Practice', 'Diagnosis', 'Treatment Planning', 'Patient Management'],
+        careerPaths: ['Family Nurse Practitioner', 'Clinical Specialist', 'Healthcare Administrator', 'Advanced Practice RN'],
+        color: 'from-fuchsia-400 to-fuchsia-600',
+      },
+    ],
+  },
+  {
+    id: 'business',
+    name: 'Business Administration',
+    icon: '📊',
+    description: 'Management, finance, marketing, and entrepreneurship',
+    programs: [
+      {
+        id: 'business-associate-no-cert',
+        name: "Associate's in Business Administration",
+        baseType: 'associate',
+        hasCertification: false,
+        duration: '2 years',
+        cost: '$7,000 - $15,000',
+        avgSalary: '$40,000 - $55,000',
+        jobGrowth: '+8%',
+        difficulty: 'Moderate',
+        topSkills: ['Business Fundamentals', 'Accounting Basics', 'Marketing', 'Management'],
+        careerPaths: ['Office Manager', 'Sales Representative', 'Marketing Coordinator', 'Business Analyst'],
+        color: 'from-blue-400 to-blue-600',
+      },
+      {
+        id: 'business-associate-with-cert',
+        name: "Associate's in Business + Professional Certification",
+        baseType: 'associate',
+        hasCertification: true,
+        certificationName: 'Project Management (CAPM)',
+        duration: '2 years + 3 months',
+        cost: '$7,500 - $15,500',
+        avgSalary: '$48,000 - $65,000',
+        jobGrowth: '+10%',
+        difficulty: 'Moderate',
+        topSkills: ['Business Fundamentals', 'Project Management', 'Team Leadership', 'Process Optimization'],
+        careerPaths: ['Project Coordinator', 'Operations Manager', 'Business Consultant', 'Program Manager'],
+        color: 'from-blue-500 to-indigo-500',
+      },
+      {
+        id: 'business-bachelor-no-cert',
+        name: "Bachelor's in Business Administration (BBA)",
+        baseType: 'bachelor',
+        hasCertification: false,
+        duration: '4 years',
+        cost: '$40,000 - $80,000',
+        avgSalary: '$60,000 - $90,000',
+        jobGrowth: '+10%',
+        difficulty: 'Moderate',
+        topSkills: ['Strategic Planning', 'Financial Analysis', 'Leadership', 'Business Strategy'],
+        careerPaths: ['Business Manager', 'Financial Analyst', 'Marketing Manager', 'Operations Director'],
+        color: 'from-indigo-400 to-indigo-600',
+      },
+      {
+        id: 'business-bachelor-with-cert',
+        name: "Bachelor's in Business + MBA Foundation",
+        baseType: 'bachelor',
+        hasCertification: true,
+        certificationName: 'PMP Certification',
+        duration: '4 years + 4 months',
+        cost: '$41,000 - $81,000',
+        avgSalary: '$75,000 - $110,000',
+        jobGrowth: '+12%',
+        difficulty: 'Challenging',
+        topSkills: ['Advanced Strategy', 'Project Management', 'Executive Leadership', 'Business Development'],
+        careerPaths: ['Senior Project Manager', 'Business Development Manager', 'Strategy Consultant', 'Department Director'],
+        color: 'from-violet-400 to-violet-600',
+      },
+    ],
+  },
+  {
+    id: 'engineering',
+    name: 'Engineering',
+    icon: '⚙️',
+    description: 'Mechanical, electrical, civil, and industrial engineering',
+    programs: [
+      {
+        id: 'eng-associate-no-cert',
+        name: "Associate's in Engineering Technology",
+        baseType: 'associate',
+        hasCertification: false,
+        duration: '2 years',
+        cost: '$9,000 - $18,000',
+        avgSalary: '$50,000 - $70,000',
+        jobGrowth: '+4%',
+        difficulty: 'Challenging',
+        topSkills: ['CAD Design', 'Technical Drawing', 'Mathematics', 'Quality Control'],
+        careerPaths: ['Engineering Technician', 'CAD Technician', 'Quality Inspector', 'Manufacturing Tech'],
+        color: 'from-orange-400 to-orange-600',
+      },
+      {
+        id: 'eng-associate-with-cert',
+        name: "Associate's in Engineering + Industry Certification",
+        baseType: 'associate',
+        hasCertification: true,
+        certificationName: 'AutoCAD Professional',
+        duration: '2 years + 3 months',
+        cost: '$9,500 - $18,500',
+        avgSalary: '$55,000 - $78,000',
+        jobGrowth: '+6%',
+        difficulty: 'Challenging',
+        topSkills: ['Advanced CAD', 'Technical Drawing', '3D Modeling', 'Design Standards'],
+        careerPaths: ['Senior CAD Technician', 'Design Specialist', 'Engineering Designer', 'Technical Coordinator'],
+        color: 'from-orange-500 to-amber-500',
+      },
+      {
+        id: 'eng-bachelor-no-cert',
+        name: "Bachelor's in Engineering",
+        baseType: 'bachelor',
+        hasCertification: false,
+        duration: '4 years',
+        cost: '$50,000 - $100,000',
+        avgSalary: '$75,000 - $100,000',
+        jobGrowth: '+6%',
+        difficulty: 'Very Challenging',
+        topSkills: ['Advanced Mathematics', 'Engineering Design', 'Systems Analysis', 'Project Management'],
+        careerPaths: ['Mechanical Engineer', 'Electrical Engineer', 'Civil Engineer', 'Process Engineer'],
+        color: 'from-amber-400 to-amber-600',
+      },
+      {
+        id: 'eng-bachelor-with-cert',
+        name: "Bachelor's in Engineering + PE License Prep",
+        baseType: 'bachelor',
+        hasCertification: true,
+        certificationName: 'EIT/FE Certification',
+        duration: '4 years + 6 months',
+        cost: '$51,000 - $101,000',
+        avgSalary: '$85,000 - $115,000',
+        jobGrowth: '+8%',
+        difficulty: 'Very Challenging',
+        topSkills: ['Professional Practice', 'Advanced Design', 'Regulatory Compliance', 'Engineering Ethics'],
+        careerPaths: ['Licensed Engineer', 'Senior Engineer', 'Engineering Manager', 'Consulting Engineer'],
+        color: 'from-yellow-400 to-yellow-600',
+      },
+    ],
+  },
+];
+
+export function getMajorById(id: string): Major | undefined {
+  return MAJORS.find(major => major.id === id);
+}
+
+export function getAllMajorIds(): string[] {
+  return MAJORS.map(major => major.id);
+}
