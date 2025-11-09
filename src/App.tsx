@@ -246,10 +246,22 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-900 via-teal-800 to-orange-900"
-            style={{ fontSize: '4.5rem', lineHeight: '1.1', fontWeight: '700', letterSpacing: '-0.02em' }}
+            className="mb-6"
+            style={{ fontSize: '5rem', lineHeight: '1.1', fontWeight: '800', letterSpacing: '-0.03em' }}
           >
-            Your Next Wave
+            <span className="text-gray-600">Your </span>
+            <span 
+              className="text-transparent bg-clip-text"
+              style={{
+                background: 'linear-gradient(90deg, #0891b2 0%, #0d9488 25%, #14b8a6 50%, #0d9488 75%, #0891b2 100%)',
+                backgroundSize: '200% 100%',
+                animation: 'career-dreamer-wave 8s linear infinite',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Next Wave
+            </span>
           </motion.h1>
           
           <motion.p 

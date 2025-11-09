@@ -13,11 +13,11 @@ fi
 
 # Install dependencies
 echo "📦 Installing Python dependencies..."
-pip install -r requirements.txt -t . --quiet
+pip3 install -r requirements.txt -t . --quiet || python3 -m pip install -r requirements.txt -t . --quiet
 
 # Create deployment package
 echo "📦 Creating deployment package..."
-zip -r lambda-deployment.zip lambda_function.py google/ boto3/ botocore/ s3transfer/ urllib3/ -x "*.pyc" "__pycache__/*" "*.dist-info/*" 2>/dev/null || true
+zip -r lambda-deployment.zip lambda_function.py boto3/ botocore/ s3transfer/ urllib3/ -x "*.pyc" "__pycache__/*" "*.dist-info/*" 2>/dev/null || true
 
 # Upload to Lambda
 echo "⬆️  Uploading to Lambda..."
@@ -29,7 +29,7 @@ aws lambda update-function-code \
 echo "✅ Lambda function updated successfully!"
 
 # Cleanup
-rm -rf lambda-deployment.zip google/ boto3/ botocore/ s3transfer/ urllib3/ *.dist-info/
+rm -rf lambda-deployment.zip boto3/ botocore/ s3transfer/ urllib3/ *.dist-info/
 
 echo "🎉 Deployment complete!"
 
