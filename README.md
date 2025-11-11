@@ -9,7 +9,7 @@
 
 ## Links
 
-[Next Wave](http://nextwave-sharkbyte.s3-website-us-east-1.amazonaws.com/), [Presentation](https://docs.google.com/presentation/d/1IwVg4L6BqqAa8QPMN2-bQCHtpTM91NZISJ3A9I1-mys/edit?usp=sharing), [Video 1](https://youtu.be/QFsq-S2dt08), [Video 2](https://youtu.be/6SV7lCTP9X0)
+[Next Wave](https://nextmajorwave.com/) [Presentation](https://docs.google.com/presentation/d/1IwVg4L6BqqAa8QPMN2-bQCHtpTM91NZISJ3A9I1-mys/edit?usp=sharing), [Video 1](https://youtu.be/QFsq-S2dt08), [Video 2](https://youtu.be/6SV7lCTP9X0)
 
 ## Next Wave: Your AI-Powered Career Compass
 
